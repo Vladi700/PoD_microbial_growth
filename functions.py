@@ -73,7 +73,7 @@ def protein(t,m_D, alpha):
 def h(t, tau, k, alpha_S, m_D, alpha, mode="generation"):
     p = protein(t, m_D, alpha)
     dpdt = m_D * alpha * np.exp(alpha * t)
-    hazard_core = (alpha_S * k / tau) * ((p / tau) ** (k - 1)) / (1 + (p / tau) ** k)
+    hazard_core = (alpha_S * k / tau**k) * ((p / tau) ** (k - 1)) / (1 + (p / tau) ** k)
     return hazard_core * dpdt
 
 
